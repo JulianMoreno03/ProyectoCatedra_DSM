@@ -8,7 +8,7 @@
   * Hazel Alejandra Ramos Vásquez. RV230413
   * Manuel de Jesús Contreras Escobar. EC230554
 # Grupo Teorico
-  * T01
+  * G01T
 
 # Link Trello 
 https://trello.com/invite/b/66d4a978280ae0336110a3fe/ATTIba39654766ac9916719fb9c208d7a1f5CB072AE6/primer-avance-del-proyecto-moviles
