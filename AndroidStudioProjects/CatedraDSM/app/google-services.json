@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "416495575072",
+    "project_id": "catedradsm",
+    "storage_bucket": "catedradsm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416495575072:android:efd683282278b94c019c45",
+        "android_client_info": {
+          "package_name": "edu.udb.catedradsm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416495575072-t9femhf4tq5d9v5o7r91p3oeg47bho84.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.udb.catedradsm",
+            "certificate_hash": "5c4e1f1a2fd78eaa94998e8da4bd2864b0c3c04c"
+          }
+        },
+        {
+          "client_id": "416495575072-c2ipr5bbeikfn1o0slo1cdlina5jkq86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8jBaBvkY2qwdvMo23EGwpUv3dqm9s6kc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416495575072-c2ipr5bbeikfn1o0slo1cdlina5jkq86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
