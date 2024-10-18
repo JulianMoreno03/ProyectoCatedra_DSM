@@ -40,8 +40,13 @@ class MainActivity : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        val user = auth.currentUser
-
+        // Verificar si el usuario ya está autenticado
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            // Si el usuario ya está autenticado, lo rediriges a la pantalla de menú
+            goToMenuActivity()
+            finish() // evitar que regrese
+        }
 
         val emailField = findViewById<EditText>(R.id.email)
         val passwordField = findViewById<EditText>(R.id.password)

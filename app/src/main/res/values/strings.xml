@@ -8,15 +8,19 @@
     <string name="btnRegistro">CREAR CUENTA</string>
     <string name="txtLogin02">---- O ----</string>
     <string name="txtRegister">Creacion de usuario</string>
-
-
     <string name="TxtRegister">INGRESA TUS DATOS </string>
-
     <string name="TxtRegister02">Informacion Personal</string>
-
     <string name="txtGoogle">Registro mas Sencillo </string>
-
     <string name="GOOGLE">GOOGLE</string>
+    <string name="Bienvenida">BIENVENIDO</string>
+    <string name="mensajePromo01">Tiempo Ilimitado</string>
+    <string name="mensajePromo02">OFERTAS DEL DIA</string>
+    <string name="mensajePromo03">Hasta un 20%</string>
 
+    <string name="msgcategoria">Categorias mas populares</string>
+    <string name="categoria01">ROPA</string>
+    <string name="categoria02">TECNOLOGIA</string>
+    <string name="add">+</string>
+    <string name="addCarrito">Añadir a carrito</string>
     <string name="default_web_client_id">416495575072-c2ipr5bbeikfn1o0slo1cdlina5jkq86.apps.googleusercontent.com</string>
 </resources>

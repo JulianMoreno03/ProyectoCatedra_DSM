@@ -6,18 +6,19 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 import edu.udb.catedradsm.R
 import edu.udb.catedradsm.models.Producto
 
-class ProductoAdapter(private val productos: List<Producto>) : RecyclerView.Adapter<ProductoAdapter.ViewHolder>() {
+class ProductoAdapter(
+    private val productos: List<Producto>,
+    private val onItemClick: (Producto) -> Unit
+) : RecyclerView.Adapter<ProductoAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = itemView.findViewById(R.id.imageViewProducto)
         val nombre: TextView = view.findViewById(R.id.textViewNombre)
         val precio: TextView = view.findViewById(R.id.textViewPrecio)
-        val descripcion: TextView = view.findViewById(R.id.textViewDescripcion)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,15 +31,18 @@ class ProductoAdapter(private val productos: List<Producto>) : RecyclerView.Adap
         val producto = productos[position]
         holder.nombre.text = producto.nombre
         holder.precio.text = "Precio: \$${producto.precio}"
-        holder.descripcion.text = producto.descripcion
 
-
-        // Usar directamente la URL pública de la imagen
+        // Cargar la imagen
         Picasso.get()
-            .load(producto.imgLink)  // Aquí el campo imgLink ya tiene la URL completa como la que mencionaste
-            .placeholder(R.drawable.ic_launcher_foreground)  // Imagen temporal mientras carga
-            .error(R.drawable.ic_launcher_background)  // Imagen en caso de error
+            .load(producto.imgLink)
+            .placeholder(R.drawable.ic_launcher_foreground)
+            .error(R.drawable.ic_launcher_background)
             .into(holder.imageView)
+
+        // Manejar el clic en el elemento
+        holder.itemView.setOnClickListener {
+            onItemClick(producto) // Llama al callback con el producto correspondiente
+        }
     }
 
     override fun getItemCount() = productos.size
