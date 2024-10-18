@@ -213,5 +213,18 @@
         app:layout_constraintTop_toBottomOf="@+id/categoriaTecnologia"
         app:layout_constraintVertical_bias="0.307" />
 
+    <ImageView
+        android:id="@+id/imgOut"
+        android:layout_width="53dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:layout_constraintVertical_bias="0.046"
+        app:srcCompat="@drawable/out" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

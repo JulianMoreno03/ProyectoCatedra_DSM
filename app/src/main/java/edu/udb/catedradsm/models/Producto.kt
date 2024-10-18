@@ -5,15 +5,17 @@ import android.os.Parcelable
 
 data class Producto(
     val nombre: String? = null,
-    val precio: Double? = null,
+    var precio: Double? = null,
     val descripcion: String? = null,
-    val imgLink: String? = null
+    val imgLink: String? = null,
+
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readValue(Double::class.java.classLoader) as? Double,
         parcel.readString(),
-        parcel.readString()
+        parcel.readString(),
+
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {

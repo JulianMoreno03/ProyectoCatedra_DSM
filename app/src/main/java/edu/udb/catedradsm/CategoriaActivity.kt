@@ -2,6 +2,8 @@ package edu.udb.catedradsm
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 
 import androidx.activity.enableEdgeToEdge
@@ -24,14 +26,20 @@ class CategoriaActivity : AppCompatActivity() {
     private lateinit var categoriaSeleccionada: String
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ProductoAdapter
+    private lateinit var textViewCategoria: TextView
     private val productosList = mutableListOf<Producto>()
+    private lateinit var btnIrACarrito: ImageView
     private val productosFiltrados = mutableListOf<Producto>() // Lista para productos filtrados
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_categoria)
 
+        btnIrACarrito = findViewById(R.id.btnIrAcarrito)
+        // Obtener la referencia del TextView
+        textViewCategoria = findViewById(R.id.text)
         // Configurar el RecyclerView
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -40,7 +48,8 @@ class CategoriaActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().reference
         // Recibir el dato del Intent
         categoriaSeleccionada = intent.getStringExtra("CATEGORIA") ?: ""
-
+        // Mostrar la categoría seleccionada en el TextView
+        textViewCategoria.text = categoriaSeleccionada
         // Cargar datos de Firebase
         cargarDatos(categoriaSeleccionada)
 
@@ -53,6 +62,11 @@ class CategoriaActivity : AppCompatActivity() {
             startActivity(intent)
         }
         recyclerView.adapter = adapter
+
+        btnIrACarrito.setOnClickListener {
+            val intent = Intent(this, CarritoActivity::class.java)
+            startActivity(intent)
+        }
 
         // Configurar el SearchView
         val searchView: SearchView = findViewById(R.id.searchView)
